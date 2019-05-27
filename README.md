@@ -31,9 +31,11 @@
 ![input_txt](https://github.com/16281022/os-lab4-/blob/master/2.jpg)<br><br>
 * 工作集：多数程序都显示出高度的局部性，也就是说，在一个时间段内，一组页面被反复引用。这组被反复引用的页面随着时间的推移，其成员也会发生变化。有时这种变化是剧烈的，有时这种变化则是渐进的。我们把这组页面的集合称为工作集。<br>
 * 缺页率：缺页率 = 缺页中断次数/页面访问次数<br>
-### 该实验使用两个测试序列，如图所示：<br>
+### 该实验使用四个测试序列（前两个与后两个虚拟内存不同），如图所示：<br>
 ![input_txt](https://github.com/16281022/os-lab4-/blob/master/13.png)<br><br>
 ![input_txt](https://github.com/16281022/os-lab4-/blob/master/14.png)<br><br>
+![input_txt](https://github.com/16281022/os-lab4-/blob/master/15.png)<br><br>
+![input_txt](https://github.com/16281022/os-lab4-/blob/master/16.png)<br><br>
 ### 2.最佳置换算法<br>
 * 基本思想<br>
 选择永不使用或是在最长时间内不再被访问（即距现在最长时间才会被访问）的页面淘汰出内存评价。<br>
@@ -47,6 +49,10 @@
 ![input_txt](https://github.com/16281022/os-lab4-/blob/master/3.png)<br><br>
 测试序列2：<br>
 ![input_txt](https://github.com/16281022/os-lab4-/blob/master/4.png)<br><br>
+测试序列3：<br>
+![input_txt](https://github.com/16281022/os-lab4-/blob/master/17.png)<br><br>
+测试序列4：<br>
+![input_txt](https://github.com/16281022/os-lab4-/blob/master/18.png)<br><br>
 ### 3.先进先出置换算法<br>
 * 基本思想<br>
 选择最先进入内存即在内存驻留时间最久的页面换出到外存，进程已调入内存的页面按进入先后次序链接成一个队列，并设置替换指针以指向最老页面。<br>
@@ -65,6 +71,10 @@
 ![input_txt](https://github.com/16281022/os-lab4-/blob/master/5.png)<br><br>
 测试序列2：<br>
 ![input_txt](https://github.com/16281022/os-lab4-/blob/master/6.png)<br><br>
+测试序列3：<br>
+![input_txt](https://github.com/16281022/os-lab4-/blob/master/19.png)<br><br>
+测试序列4：<br>
+![input_txt](https://github.com/16281022/os-lab4-/blob/master/20.png)<br><br>
 ### 4.最近最久未使用置换算法<br>
 * 基本思想<br>
 以“最近的过去”作为“最近的将来”的近似，选择最近一段时间最长时间未被访问的页面淘汰出内存。<br>
@@ -78,6 +88,10 @@
 ![input_txt](https://github.com/16281022/os-lab4-/blob/master/7.png)<br><br>
 测试序列2：<br>
 ![input_txt](https://github.com/16281022/os-lab4-/blob/master/8.png)<br><br>
+测试序列3：<br>
+![input_txt](https://github.com/16281022/os-lab4-/blob/master/21.png)<br><br>
+测试序列4：<br>
+![input_txt](https://github.com/16281022/os-lab4-/blob/master/22.png)<br><br>
 ### 5.改进型Clock置换算法<br>
 * 基本思想<br>
 1）从查寻指针当前位置起扫描内存分页循环队列，选择A=0且M=0的第一个页面淘汰；若未找到，转②。<br>
@@ -92,6 +106,10 @@
 ![input_txt](https://github.com/16281022/os-lab4-/blob/master/9.png)<br><br>
 测试序列2：<br>
 ![input_txt](https://github.com/16281022/os-lab4-/blob/master/10.png)<br><br>
+测试序列3：<br>
+![input_txt](https://github.com/16281022/os-lab4-/blob/master/23.png)<br><br>
+测试序列4：<br>
+![input_txt](https://github.com/16281022/os-lab4-/blob/master/24.png)<br><br>
 ### 6.页面缓冲算法PBA<br>
 * 基本思想<br>
   * 设立空闲页面链表和已修改页面链表。<br>
@@ -110,3 +128,19 @@
 ![input_txt](https://github.com/16281022/os-lab4-/blob/master/11.png)<br><br>
 测试序列2：<br>
 ![input_txt](https://github.com/16281022/os-lab4-/blob/master/12.png)<br><br>
+测试序列3：<br>
+![input_txt](https://github.com/16281022/os-lab4-/blob/master/25.png)<br><br>
+测试序列4：<br>
+![input_txt](https://github.com/16281022/os-lab4-/blob/master/26.png)<br><br>
+## 五、实验结果分析<br>
+### 1.实验结果比较<br>
+| 算法名称 | 最佳置换算法 | 先进先出算法 | 最近最久未使用算法 | 改进型Clock置换算法 | 页面缓冲置换算法 |
+| :-: | :-: | :-: | :-: |:-: |:-: |
+| 缺页数 | 16 | 19 | 38 | 20 | 21 |
+| 缺页率 | 0.500000 | 0.593750 | 1.187500 | 0.625000 | 0.656250 |
+
+| 算法名称 | 最佳置换算法 | 先进先出算法 | 最近最久未使用算法 | 改进型Clock置换算法 | 页面缓冲置换算法 |
+| :-: | :-: | :-: | :-: |:-: |:-: |
+| 缺页数 | 11 | 18 | 36 | 21 | 10 |
+| 缺页率 | 0.343750 | 1.125000 | 1.187500 | 0.656250 | 0.312500 |
+### 2.算法比较<br>
