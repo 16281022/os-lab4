@@ -40,6 +40,10 @@
   * void optimal(int n); //调入页面，执行置换<br>
   * void testOptimal()； //最佳置换算法实现<br> 
 * 运行结果<br>
+测试序列1：<br>
+![input_txt](3333)<br><br>
+测试序列2：<br>
+![input_txt](4444)<br><br>
 ### 3.先进先出置换算法<br>
 * 基本思想<br>
 选择最先进入内存即在内存驻留时间最久的页面换出到外存，进程已调入内存的页面按进入先后次序链接成一个队列，并设置替换指针以指向最老页面。<br>
@@ -54,6 +58,10 @@
   * void fifoTest();//调入页面，执行置换<br>
   * void fifo(pQueue q, int num);//先进先出置换算法实现<br>
 * 运行结果<br>
+测试序列1：<br>
+![input_txt](5555)<br><br>
+测试序列2：<br>
+![input_txt](6666)<br><br>
 ### 4.最近最久未使用置换算法<br>
 * 基本思想<br>
 以“最近的过去”作为“最近的将来”的近似，选择最近一段时间最长时间未被访问的页面淘汰出内存。<br>
@@ -63,6 +71,10 @@
   * void LRU(int n);//调入页面，执行置换<br>
   * void testLRU();//最近最久未使用置换算法实现<br>
 * 运行结果<br>
+测试序列1：<br>
+![input_txt](7777)<br><br>
+测试序列2：<br>
+![input_txt](8888)<br><br>
 ### 5.改进型Clock置换算法<br>
 * 基本思想<br>
 1）从查寻指针当前位置起扫描内存分页循环队列，选择A=0且M=0的第一个页面淘汰；若未找到，转②。<br>
@@ -73,6 +85,10 @@
   * void test_Clock();调入页面，执行置换<br>
   * void updated_Clock(int n);//改进型Clock置换算法实现<br>
 * 运行结果<br>
+测试序列1：<br>
+![input_txt](9999)<br><br>
+测试序列2：<br>
+![input_txt](1010)<br><br>
 ### 6.页面缓冲算法PBA<br>
 * 基本思想<br>
   * 设立空闲页面链表和已修改页面链表。<br>
@@ -87,4 +103,7 @@
   * void test_PBA();//调入页面，执行置换<br>
   * void PBA(int n);//页面缓冲算法实现<br>
 * 运行结果<br>
-
+测试序列1：<br>
+![input_txt](11 11)<br><br>
+测试序列2：<br>
+![input_txt](1212)<br><br>
